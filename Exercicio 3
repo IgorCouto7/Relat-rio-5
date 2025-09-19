@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int quantidade;
+    cout << "Quantas notas deseja colocar ? ";
+    cin >> quantidade;
+
+    float soma = 0;
+    for (int i = 0; i < quantidade; i++) {
+        float nota;
+        do {
+            cout << "Digite a nota " << i + 1 << " (0 a 10): ";
+            cin >> nota;
+            if (nota < 0 || nota > 10) {
+                cout << "Nota inválida";
+            }
+        } while (nota < 0 || nota > 10);
+
+        soma += nota;
+    }
+
+    float media = soma / quantidade;
+    cout << "Sua média foi: " << media << endl;
+
+    if (media >= 7)
+        cout << "Parabéns, você foi APROVADO!";
+    else
+        cout << "você foi REPROVADO";
+
+    return 0;
+}
