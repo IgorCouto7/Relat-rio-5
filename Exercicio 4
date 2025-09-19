@@ -1,0 +1,48 @@
+// Esse foi dificil
+
+#include <iostream>
+using namespace std;
+
+double celsiusParaFahrenheit(double celsius) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+double celsiusParaKelvin(double celsius) {
+    return celsius + 273.15;
+}
+
+int main() {
+    int opcao;
+    do {
+        cout << "Conversor de Temperatura";
+        cout << "1. Celsius -> Fahrenheit\n";
+        cout << "2. Celsius -> Kelvin\n";
+        cout << "3. Sair\n";
+        cout << "Escolha uma opção: ";
+        cin >> opcao;
+
+        switch (opcao) {
+            case 1: {
+                double c;
+                cout << "Digite a temperatura em Celsius: ";
+                cin >> c;
+                cout << "Resultado: " << celsiusParaFahrenheit(c) << " °F\n";
+                break;
+            }
+            case 2: {
+                double c;
+                cout << "Digite a temperatura em Celsius: ";
+                cin >> c;
+                cout << "Resultado: " << celsiusParaKelvin(c) << " K\n";
+                break;
+            }
+            case 3:
+                cout << "Encerrando o conversor";
+                break;
+            default:
+                cout << "tente novamente";
+        }
+    } while (opcao != 3);
+
+    return 0;
+}
